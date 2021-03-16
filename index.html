@@ -2,7 +2,7 @@
 <html lang="en">
     <body>
         <h1>Simple Calculator</h1>
-        <form>
+        <form id="form">
             <label>
                 <input type="text" name="num1" id="num1">
             </label>
@@ -18,21 +18,23 @@
                 <input type="text" name="num2" id="num2">
             </label>
             <label>
-                <input type="submit" value="Calculate">
+                <input type="submit" value="Calculate" id='calculate'>
             </label>
         </form>
         <p id="result">Result:</p>
 
         <br>
 
-        <button>console.log</button>
-        <button>console.error</button>
-        <button>console.table</button>
-        <button>console.dir</button>
-        <button>console.dirxml</button>
-        <button>console.group</button>
-        <button>console.time</button>
-        <button>console.timeEnd</button>
-        <button>console.trace</button>
+        <button onclick="testLog()">console.log</button>
+        <button onclick="testError()">console.error</button>
+        <button onclick="testTable()">console.table</button>
+        <button onclick="testDir()">console.dir</button>
+        <button onclick="testDirxml()">console.dirxml</button>
+        <button onclick="testGroup()">console.group</button>
+        <button onclick="testTimeStart()">console.time (start)</button>
+        <button onclick="testTimeEnd()">console.timeEnd (end)</button>
+        <button onclick="testTrace()">console.trace</button>
+
+        <script src="./index.js"></script>
     </body>
 </html>
