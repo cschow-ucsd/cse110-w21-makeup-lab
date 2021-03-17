@@ -21,8 +21,15 @@ document.getElementById('form').addEventListener('submit', (e) => {
             result = n1 * n2
             break
         case '/':
-            resulit = n1 / n2
-            break
+            try {
+                if(n2 == 0) throw DivideByZeroError;
+                result = n1 / n2
+            } catch (err) {
+                result = 'UNDEFINED'
+            }
+            finally {
+                break
+            }
         default:
             throw 'Invalid operation!'
             break
@@ -35,6 +42,13 @@ document.getElementById('form').addEventListener('submit', (e) => {
         result: result
     })
 })
+
+class DivideByZeroError extends Error {
+    constructor(message) {
+      super(message);
+      this.name = "DivideByZeroError";
+    }
+  }
 
 function testLog() {
     console.log(`1st number: ${num1.value}`)
