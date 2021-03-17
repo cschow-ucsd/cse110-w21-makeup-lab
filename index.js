@@ -3,6 +3,18 @@ const num2 = document.getElementById('num2')
 const operation = document.getElementById('operation')
 const submitButton = document.getElementById('operation')
 const resultText = document.getElementById('result')
+var introElement = null
+try{
+    introElement = document.getElementById("intro")
+    introElement.innerHTML = "This is a calculator"
+} catch (err) {
+    introElement = document.createElement("p")
+    introElement.innerHTML = "This is a calculator"
+    const headerElement = document.querySelector("h1")
+    headerElement.after(introElement)
+} finally {
+    console.log("Error happened, what's this 0.o")
+}
 
 document.getElementById('form').addEventListener('submit', (e) => {
     e.preventDefault();
@@ -24,7 +36,7 @@ document.getElementById('form').addEventListener('submit', (e) => {
             try {
                 if(n2 == 0) throw DivideByZeroError;
                 result = n1 / n2
-            } catch (err) {
+            } catch (DivideByZeroError) {
                 result = 'UNDEFINED'
             }
             finally {
