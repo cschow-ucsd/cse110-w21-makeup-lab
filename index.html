@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <body>
-        <h1>Simple Calculator</h1>
-        <form id="form">
-            <label>
+
+<body>
+    <h1>Simple Calculator</h1>
+    <form id="form">
+        <label>
                 <input type="text" name="num1" id="num1">
             </label>
-            <label>
+        <label>
                 <select name="operation" id="operation">
                     <option value="+">+</option>
                     <option value="-">-</option>
@@ -14,27 +15,36 @@
                     <option value="/">/</option>
                 </select>
             </label>
-            <label>
+        <label>
                 <input type="text" name="num2" id="num2">
             </label>
-            <label>
+        <label>
                 <input type="submit" value="Calculate" id='calculate'>
             </label>
-        </form>
-        <p id="result">Result:</p>
+    </form>
+    <p id="result">Result:</p>
 
-        <br>
+    <br>
 
-        <button onclick="testLog()">console.log</button>
-        <button onclick="testError()">console.error</button>
-        <button onclick="testTable()">console.table</button>
-        <button onclick="testDir()">console.dir</button>
-        <button onclick="testDirxml()">console.dirxml</button>
-        <button onclick="testGroup()">console.group</button>
-        <button onclick="testTimeStart()">console.time (start)</button>
-        <button onclick="testTimeEnd()">console.timeEnd (end)</button>
-        <button onclick="testTrace()">console.trace</button>
+    <button onclick="testLog()">console.log</button>
+    <button onclick="testError()">console.error</button>
+    <button onclick="testTable()">console.table</button>
+    <button onclick="testDir()">console.dir</button>
+    <button onclick="testDirxml()">console.dirxml</button>
+    <button onclick="testGroup()">console.group</button>
+    <button onclick="testTimeStart()">console.time (start)</button>
+    <button onclick="testTimeEnd()">console.timeEnd (end)</button>
+    <button onclick="testTrace()">console.trace</button>
 
-        <script src="./index.js"></script>
-    </body>
+    <script src="./index.js"></script>
+
+    <!-- TrackJS -->
+    <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+    <script>
+        window.TrackJS && TrackJS.install({
+            token: "6397dbf8cf4246c9849e09e3b7d86b4e"
+                // for more configuration options, see https://docs.trackjs.com
+        });
+    </script>
+</body>
 </html>
