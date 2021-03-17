@@ -6,11 +6,11 @@ const resultText = document.getElementById('result')
 
 document.getElementById('form').addEventListener('submit', (e) => {
     e.preventDefault();
-    
+
     const n1 = Number(num1.value)
     const n2 = Number(num2.value)
     let result = undefined
-    switch(operation.value) {
+    switch (operation.value) {
         case '+':
             result = n1 + n2
             break
@@ -22,12 +22,11 @@ document.getElementById('form').addEventListener('submit', (e) => {
             break
         case '/':
             try {
-                if(n2 == 0) throw DivideByZeroError;
+                if (n2 == 0) throw DivideByZeroError;
                 result = n1 / n2
             } catch (err) {
                 result = 'UNDEFINED'
-            }
-            finally {
+            } finally {
                 break
             }
         default:
@@ -45,10 +44,10 @@ document.getElementById('form').addEventListener('submit', (e) => {
 
 class DivideByZeroError extends Error {
     constructor(message) {
-      super(message);
-      this.name = "DivideByZeroError";
+        super(message);
+        this.name = "DivideByZeroError";
     }
-  }
+}
 
 function testLog() {
     console.log(`1st number: ${num1.value}`)
@@ -60,6 +59,7 @@ function testError() {
 }
 
 let calculations = []
+
 function testTable() {
     console.table(calculations)
 }
@@ -83,11 +83,13 @@ function testGroup() {
 }
 
 let sum, timeout
+
 function testTimeStart() {
     console.log('Performing additions...')
 
     console.time()
     sum = 0
+
     function callback() {
         sum++
         console.log(sum)
@@ -108,4 +110,13 @@ function testTrace() {
         console.trace()
     }
     func()
+}
+
+function globalError() {
+    throw 'BaD cOdE!'
+}
+
+// error handler
+window.onerror = (errorMessage, url, lineNumber) => {
+    console.log('Sorry m8, an error happened.')
 }
